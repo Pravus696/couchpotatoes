@@ -5,6 +5,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.0"
   },
+  "scripts": {
+    "install-all": "npm install && cd ../client/package.json && npm install"
+  },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^4.17.21",
