@@ -1,12 +1,21 @@
-import React from "react";
+import SofaDetail from './SofaDetail';
+import './SofaList.css';
+import PropTypes from 'prop-types';
 
-const SofaList = () => {
-    return (
-        <div>
-        <h1>Our Sofas</h1>
-        {/* Add more content here */}
-        </div>
-    );
-    };
+const SofaList = ({ sofas }) => {
+  return (
+    <div className="sofa-list">
+      {sofas.map(sofa => (
+        <SofaDetail key={sofa.id} sofa={sofa} />
+      ))}
+    </div>
+  );
+};
+SofaList.propTypes = {
+  sofas: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    // add other sofa properties here if needed
+  })).isRequired,
+};
 
 export default SofaList;
