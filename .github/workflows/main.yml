@@ -18,8 +18,6 @@ jobs:
       - name: Install dependencies
         run: cd ../client/package.json
              npm install
-             npm run build
-             npm run dev
       - name: Run tests
         run: npm test
     
