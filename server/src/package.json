@@ -3,10 +3,11 @@
     "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.0.0",
+    "vite": "^6.0.5"
   },
   "scripts": {
-    "install-all": "npm install && cd ../client/package.json && npm install"
+    
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
