@@ -1,10 +1,11 @@
-import React from "react";
+import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
-      <p>© 2021 Couch Potatoes</p>
+    <footer className="footer">
+      <p>&copy; 2024 Sofa Sharing Network. All rights reserved.</p>
     </footer>
   );
 };
+
 export default Footer;
