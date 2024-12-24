@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { User } from '../models/User';
+import { User } from '../models/index.ts';
 
 // Get all users
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
