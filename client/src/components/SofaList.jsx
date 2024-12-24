@@ -1,4 +1,4 @@
-import SofaDetail from './SofaDetail';
+import SofaDetail from '../assets/styles/SofaList.css';
 import './SofaList.css';
 import PropTypes from 'prop-types';
 
