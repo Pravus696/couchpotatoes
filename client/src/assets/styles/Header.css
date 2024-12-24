@@ -1,0 +1,21 @@
+.header {
+    background-color: #ff6347;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    color: #fff;
+    margin: 0;
+  }
+  
+  .header nav {
+    margin-top: 10px;
+  }
+  
+  .header nav a {
+    margin: 0 15px;
+    color: #fff;
+    font-weight: bold;
+  }
+  

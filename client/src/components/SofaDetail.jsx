@@ -1,4 +1,4 @@
-import './SofaDetail.css';
+import '../assets/styles/SofaDetail.css';
 import PropTypes from 'prop-types';
 
 const SofaDetail = ({ sofa }) => {
