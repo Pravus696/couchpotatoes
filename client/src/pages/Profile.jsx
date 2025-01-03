@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Profile.css";
+import NavBar from "../components/NavBar"; // Adjust the path to where NavBar is located
 
 const Profile = () => {
   const [user, setUser] = useState(null); // user
@@ -39,24 +39,26 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <h1>Profile</h1>
-      {user ? (
-        <div className="profile-details">
-          <img
-            src={imageUrl || user.profileImage}
-            alt="User Profile"
-            className="profile-image"
-          />
-          <h2>{user.name}</h2>
-          <p>Email: {user.email}</p>
-          <p>Bio: {user.bio}</p>
-          <p>Posts: {user.posts}</p>
-          <p>Sits: {user.sits}</p>
-          <p>Squats: {user.squats}</p>
-          {/* Add more user information here */}
-        </div>
-      ) : (
-        <p>No user information available. Please log in.</p>
-      )}
+      <div className="profile-details">
+        {user ? (
+          <>
+            <img
+              src={imageUrl || user.profileImage}
+              alt="User Profile"
+              className="profile-image"
+            />
+            <h2>{user.name}</h2>
+            <p>Email: {user.email}</p>
+            <p>Bio: {user.bio}</p>
+            <p>Posts: {user.posts}</p>
+            <p>Sits: {user.sits}</p>
+            <p>Squats: {user.squats}</p>
+            {/* Add more user information here */}
+          </>
+        ) : (
+          <p>No user information available. Please log in.</p>
+        )}
+      </div>
     </div>
   );
 };
