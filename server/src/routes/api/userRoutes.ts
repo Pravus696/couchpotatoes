@@ -12,7 +12,7 @@ import {
 const router = express.Router();
 
 //import middleware
-import { authenticateToken } from '../../servers/auth';
+import { authenticateToken } from '../../services/auth';
 
 // Route to create a user
 router.route('/').post(createUser).put(authenticateToken, updateUser);
