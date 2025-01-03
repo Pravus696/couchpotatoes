@@ -49,6 +49,9 @@ const Profile = () => {
           <h2>{user.name}</h2>
           <p>Email: {user.email}</p>
           <p>Bio: {user.bio}</p>
+          <p>Posts: {user.posts}</p>
+          <p>Sits: {user.sits}</p>
+          <p>Squats: {user.squats}</p>
           {/* Add more user information here */}
         </div>
       ) : (

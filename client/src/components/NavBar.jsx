@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <header className="navbar">
       <div className="navbar-brand">
-        <img src="/path-to-your-logo.png" alt="Logo" className="navbar-logo" />
+        <img src="/assets/images/logo.png" alt="Logo" className="navbar-logo" />
         <h1 className="navbar-title">CouchPotatoes</h1>
       </div>
       <nav>
