@@ -9,6 +9,12 @@
     background-color: #ff6347;
     padding: 10px 20px;
     color: var(--font-color);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
   }
   
   .navbar-brand {
@@ -48,4 +54,3 @@
   .navbar-links a:hover {
     color: #ffd700;
   }
-  

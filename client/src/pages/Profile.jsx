@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Profile.css";
+import NavBar from "../components/NavBar"; // Adjust the path to where NavBar is located
 
 const Profile = () => {
   const [user, setUser] = useState(null); // user
@@ -57,6 +57,7 @@ const Profile = () => {
         <><p>No user information available. Please log in.</p>
         <button onClick={() => navigate("/login")}>Login</button></>
       )}
+
     </div>
   );
 };
