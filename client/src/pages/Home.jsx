@@ -24,8 +24,8 @@ const Home = () => {
   }, []);
 
   const handleTitleChange = (event) => {
-    setCardTitle(event.target.value);
-  };
+      setCardTitle(event.target.value);
+    };
 
   const handleDescriptionChange = (event) => {
     setCardDescription(event.target.value);
