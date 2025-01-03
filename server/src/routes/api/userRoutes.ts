@@ -5,18 +5,29 @@ import {
   createUser,
   updateUser,
   deleteUser,
-} from '../controllers/user';
+  getSingleUser,
+  login,
+} from '../../controllers/userContoller';
 
 const router = express.Router();
+
+//import middleware
+import { authenticateToken } from '../../servers/auth';
+
+// Route to create a user
+router.route('/').post(createUser).put(authenticateToken, updateUser);
+
+// Route to login a user
+router.route('/login').post(login);
+
+// Route to get a single user
+router.route('/me').get(authenticateToken, getSingleUser);
 
 // Route to get all users
 router.get('/', getAllUsers);
 
 // Route to get a user by ID
 router.get('/:userId', getUserById);
-
-// Route to create a new user
-router.post('/', createUser);
 
 // Route to update a user by ID
 router.put('/:userId', updateUser);
