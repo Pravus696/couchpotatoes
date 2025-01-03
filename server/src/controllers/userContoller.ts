@@ -1,9 +1,15 @@
 import { Request, Response } from 'express';
+
+interface CustomRequest extends Request {
+  user?: {
+    _id: string;
+  };
+}
 import { User } from '../models/index.ts';
 import { signToken } from '../services/auth.ts';
 
 // get a single user by either their id or their username
-export const getSingleUser = async (req: Request, res: Response) => {
+export const getSingleUser = async (req: CustomRequest, res: Response) => {
   const foundUser = await User.findOne({
     $or: [{ _id: req.user ? req.user._id : req.params.id }, { username: req.params.username }],
   });
