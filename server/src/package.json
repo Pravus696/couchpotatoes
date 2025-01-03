@@ -1,25 +1,25 @@
-{ 
-    "name": "server",
-    "version": "1.0.0",
-    "description": "",
-    "main": "dist/server.js",
-    "type": "module",
-    "scripts": {
-      "build": "tsc",
-      "start": "node dist/server.js",
-      "watch": "nodemon dist/server.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "brcypt": "^1.0.1",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0",
-    "vite": "^6.0.5"
-    
+    "mongoose": "^8.9.3",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
