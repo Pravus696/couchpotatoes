@@ -1,11 +1,14 @@
 /* NavBar.css */
+:root {
+    --font-color: #fff;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ff6347;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--font-color);
   }
   
   .navbar-brand {
@@ -23,17 +26,21 @@
   }
   
   .navbar-links {
-    list-style: none;
     display: flex;
+    justify-content: center; /* Center the links horizontally */
+    list-style: none;
+    margin: 0;
+    padding: 0;
     gap: 20px;
   }
   
   .navbar-links li {
+    margin: 0 1rem;
     font-size: 1.2em;
   }
   
   .navbar-links a {
-    color: #fff;
+    color: var(--font-color);
     text-decoration: none;
     transition: color 0.3s;
   }

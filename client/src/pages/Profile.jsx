@@ -38,7 +38,6 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      <h1>Profile</h1>
       {user ? (
         <div className="profile-details">
           <img
@@ -55,7 +54,8 @@ const Profile = () => {
           {/* Add more user information here */}
         </div>
       ) : (
-        <p>No user information available. Please log in.</p>
+        <><p>No user information available. Please log in.</p>
+        <button onClick={() => navigate("/login")}>Login</button></>
       )}
     </div>
   );
