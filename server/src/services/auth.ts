@@ -1,4 +1,8 @@
 import type { Request, Response, NextFunction } from 'express';
+
+interface CustomRequest extends Request {
+    user?: JwtPayload;
+}
 import jwt from 'jsonwebtoken';
 
 import dotenv from 'dotenv';
@@ -6,11 +10,10 @@ dotenv.config();
 
 interface JwtPayload {
     _id: unknown;
-    username: string;   
     email: string;
 }
 
-export const authenticateToken = (req: Request, res: Response, next: NextFunction): void => {
+export const authenticateToken = (req: CustomRequest, res: Response, next: NextFunction): void => {
     const authHeader = req.headers.authorization;
 
     if (authHeader) {
