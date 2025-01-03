@@ -5,8 +5,8 @@ interface CustomRequest extends Request {
     _id: string;
   };
 }
-import { User } from '../models/index.ts';
-import { signToken } from '../services/auth.ts';
+import { User } from '../models/index';
+import { signToken } from '../services/auth';
 
 // get a single user by either their id or their username
 export const getSingleUser = async (req: CustomRequest, res: Response) => {
