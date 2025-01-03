@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Couch } from '../models/Couch';
+import { Couch } from '../models/index.ts';
 
 // Get all couches
 export const getAllCouches = async (req: Request, res: Response): Promise<void> => {

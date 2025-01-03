@@ -36,4 +36,6 @@ const couchSchema: Schema<ICouch> = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-export const Couch = mongoose.model<ICouch>('Couch', couchSchema);
+const Couch = mongoose.model<ICouch>('Couch', couchSchema);
+
+export default Couch;
