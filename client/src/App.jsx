@@ -1,42 +1,23 @@
-import React, { useState, useMemo, createContext } from 'react';
-
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Upload from './pages/Upload';
-
-// Create a context for global state management
-const AppContext = createContext();
+import NavBar from '../src/components/navBar.jsx';
+import Home from '../src/pages/Home.jsx';
+import Profile from '../src/pages/Profile.jsx';
+import './App.css';
 
 const App = () => {
-  const [state, setState] = useState({
-    user: null,
-    sofas: []
-  });
-
-  const contextValue = useMemo(() => ({ state, setState }), [state, setState]);
-
   return (
-    <AppContext.Provider value={contextValue}>
-      <Router>
-        <div className="app">
-          <Header />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/upload" element={<Upload />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </AppContext.Provider>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/messages" element={<div>Messages</div>} />
+        <Route path="/notifications" element={<div>Notifications</div>} />
+        <Route path="/settings" element={<div>Settings</div>} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
-export { AppContext };
-
