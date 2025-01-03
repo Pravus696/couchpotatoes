@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '..styles/login.css';
+import '../assets/styles/login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -18,6 +18,9 @@ const Login = () => {
                 username,
                 password
             });
+
+            //Extract token from the response
+            const token = response.data.token;
 
             // Save the token in the local storage
             if (token) {
