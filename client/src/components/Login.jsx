@@ -18,7 +18,10 @@ const Login = () => {
                 username,
                 password
             });
-            
+
+            //Extract token from the response
+            const token = response.data.token;
+
             // Save the token in the local storage
             if (token) {
                 localStorage.setItem('token', token);
@@ -73,3 +76,4 @@ const Login = () => {
 };
 
 export default Login;
+
