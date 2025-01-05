@@ -55,7 +55,10 @@ const Profile = () => {
           {/* Add more user information here */}
         </div>
       ) : (
+        <div>
         <p>No user information available. Please log in.</p>
+        <button className="login-button" onClick={() => navigate("/login")}>Login</button>
+        </div>
       )}
     </div>
   );
