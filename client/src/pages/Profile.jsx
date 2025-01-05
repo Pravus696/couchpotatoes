@@ -38,27 +38,26 @@ const Profile = () => {
 
   return (
     <div className="profile-container">
-      <h1>Profile</h1>
-      <div className="profile-details">
-        {user ? (
-          <>
-            <img
-              src={imageUrl || user.profileImage}
-              alt="User Profile"
-              className="profile-image"
-            />
-            <h2>{user.name}</h2>
-            <p>Email: {user.email}</p>
-            <p>Bio: {user.bio}</p>
-            <p>Posts: {user.posts}</p>
-            <p>Sits: {user.sits}</p>
-            <p>Squats: {user.squats}</p>
-            {/* Add more user information here */}
-          </>
-        ) : (
-          <p>No user information available. Please log in.</p>
-        )}
-      </div>
+      {user ? (
+        <div className="profile-details">
+          <img
+            src={imageUrl || user.profileImage}
+            alt="User Profile"
+            className="profile-image"
+          />
+          <h2>{user.name}</h2>
+          <p>Email: {user.email}</p>
+          <p>Bio: {user.bio}</p>
+          <p>Posts: {user.posts}</p>
+          <p>Sits: {user.sits}</p>
+          <p>Squats: {user.squats}</p>
+          {/* Add more user information here */}
+        </div>
+      ) : (
+        <><p>No user information available. Please log in.</p>
+        <button onClick={() => navigate("/login")}>Login</button></>
+      )}
+
     </div>
   );
 };
