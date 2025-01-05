@@ -1,67 +1,119 @@
 /* Basic reset to remove default margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Container for the main content */
-  .home-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the main content */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Header styles */
+.home-header {
+  margin: 20px 0;
+  font-size: 2.5em;
+  color: #333;
+  text-align: center;
+}
+
+/* Paragraph styles */
+.home-paragraph {
+  font-size: 1.2em;
+  color: #666;
+  max-width: 600px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Sofa list container */
+.sofa-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Sofa item */
+.sofa-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sofa-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sofa-item h3 {
+  color: #ff6347;
+  margin-bottom: 10px;
+}
+
+.sofa-item p {
+  color: #666;
+}
+
+/* Upload styles */
+.input-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    padding: 20px;
-  }
-  
-  /* Header styles */
-  .home-header {
-    margin: 20px 0;
-    font-size: 2.5em;
-    color: #333;
-    text-align: center;
-  }
-  
-  /* Paragraph styles */
-  .home-paragraph {
-    font-size: 1.2em;
-    color: #666;
-    max-width: 600px;
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  /* Sofa list container */
-  .sofa-list {
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+}
+
+.input-file {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6347; 
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+.upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6347; 
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
   }
   
-  /* Sofa item */
-  .sofa-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .sofa-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  .sofa-item h3 {
-    color: #ff6347;
-    margin-bottom: 10px;
-  }
-  
-  .sofa-item p {
-    color: #666;
-  }
-  
+/* Card styles */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: black;
+}
+
+.card-description {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: black;
+}
