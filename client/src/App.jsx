@@ -12,9 +12,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/messages" element={<div>Messages</div>} />
-        <Route path="/notifications" element={<div>Notifications</div>} />
-        <Route path="/settings" element={<div>Settings</div>} />
+        <Route path="/messages" element={<div>Messages coming in a future update.</div>} />
+        <Route path="/notifications" element={<div>Notifications coming in a future update.</div>} />
+        <Route path="/settings" element={<div>Settings coming in a future update.</div>} />
       </Routes>
     </Router>
   );
