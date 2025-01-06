@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Couch, User, Post } from '../models/index.ts';
+import { Couch, User, Post } from '../models/index.js';
 
 // Get all posts
 export const getAllPosts = async (
