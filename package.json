@@ -1,10 +1,12 @@
 {
   "scripts": {
-  "client": "npm start --prefix client",        
-  "server": "npm start --prefix server",        
-  "dev": "concurrently \"npm run server\" \"npm run client\"" 
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
-    "concurrently": "^9.1.2"
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.9.3"
   }
 }
