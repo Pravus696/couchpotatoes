@@ -117,7 +117,7 @@ const Home = () => {
           />
           Choose File
         </label>
-        <button type="submit" className="upload-button">Upload</button>
+        <button type="submit" className="upload-button" onClick={handleSubmit}>Upload</button>
       </div>
     </div>
   );

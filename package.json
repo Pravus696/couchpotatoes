@@ -2,7 +2,9 @@
   "scripts": {
   "client": "npm start --prefix client",        
   "server": "npm start --prefix server",        
-  "dev": "concurrently \"npm run server\" \"npm run client\"" 
+  "dev": "concurrently \"npm run server\" \"npm run client\"" ,
+  "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
+  "render-build": "npm install && npm run build"
   },
   "dependencies": {
     "concurrently": "^9.1.2"
