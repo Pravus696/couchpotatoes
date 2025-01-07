@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Couch } from '../models/index.ts';
+import { Couch } from '../models/index.js';
 // Get all couches
 export const getAllCouches = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
