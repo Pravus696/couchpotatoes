@@ -50,10 +50,14 @@ const Home = () => {
     console.log({ cardTitle, cardDescription, cardImage });
 
     try {
-    const response = await axios.post("/Upload", {
+    const response = await axios.post("http://localhost:3001/api/upload", formData, {
       title: cardTitle,
       description: cardDescription,
       imageUrl: cardImage,
+      headers: {
+        "Content-Type": "application/json",
+      },
+
     });
       console.log("Post created:", response.data);
 
