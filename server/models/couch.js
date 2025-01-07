@@ -18,5 +18,5 @@ const couchSchema = new Schema({
     postedBy: { type: Schema.Types.ObjectId, ref: 'User' },
     createdAt: { type: Date, default: Date.now },
 });
-const Couch = mongoose.model('Couch', couchSchema);
+const Couch = mongoose.models.Couch || mongoose.model('Couch', couchSchema);
 export default Couch;
