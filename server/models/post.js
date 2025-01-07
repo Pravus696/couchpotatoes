@@ -6,6 +6,12 @@ const postSchema = new Schema({
         enum: ["Sofa", "Couch", "Loveseat", "Sectional", "Recliner"],
         required: true,
     },
+    description: {
+        type: String, required: true 
+    }, 
+    imageUrl: {
+        type: String, required: false
+    }, 
     content: String,
     images: [String],
     postedBy: { type: Schema.Types.ObjectId, ref: "User" },
@@ -18,6 +24,6 @@ const postSchema = new Schema({
         },
     ],
     squats: [{ type: Schema.Types.ObjectId, ref: "User" }],
-});
-const Post = mongoose.model("Couch", postSchema);
+}, { timestamps: true });
+const Post = mongoose.models.Post || mongoose.model('Post', postSchema);
 export default Post;

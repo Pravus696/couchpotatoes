@@ -22,6 +22,6 @@ const RepostSchema = new mongoose.Schema(
         }
     }); 
 
-    const Repost = mongoose.model('Repost', RepostSchema);
+    const Repost = mongoose.models.Repost || mongoose.model('Repost', RepostSchema);
     export default Repost;
     

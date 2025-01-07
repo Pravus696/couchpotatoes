@@ -1,12 +1,13 @@
 {
   "scripts": {
-  "client": "npm start --prefix client",        
-  "server": "npm start --prefix server",        
-  "dev": "concurrently \"npm run server\" \"npm run client\"" ,
-  "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
-  "render-build": "npm install && npm run build"
+    "client": "npm start --prefix client",
+    "server": "npm start --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
+    "render-build": "npm install && npm run build"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
     "mongoose": "^8.9.3"
