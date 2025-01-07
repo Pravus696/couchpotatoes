@@ -1,15 +1,14 @@
 {
   "scripts": {
-    "client": "npm start --prefix client",
-    "server": "npm start --prefix server",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "render-build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\""
+  "client": "npm start --prefix client",        
+  "server": "npm start --prefix server",        
+  "dev": "concurrently \"npm run server\" \"npm run client\"" ,
+  "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
+  "render-build": "npm install && npm run build"
   },
   "dependencies": {
     "concurrently": "^9.1.2",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "mongoose": "^8.9.3",
-    "node-fetch": "^3.3.2"
+    "mongoose": "^8.9.3"
   }
 }
