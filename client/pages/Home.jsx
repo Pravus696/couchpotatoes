@@ -47,12 +47,14 @@ const Home = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    console.log({ cardTitle, cardDescription, cardImage });
+
     try {
-      const response = await axios.post("/api/posts", {
-        title: cardTitle,
-        description: cardDescription,
-        imageUrl: cardImage,
-      });
+    const response = await axios.post("/Upload", {
+      title: cardTitle,
+      description: cardDescription,
+      imageUrl: cardImage,
+    });
       console.log("Post created:", response.data);
 
       setPosts([...posts, response.data]);
