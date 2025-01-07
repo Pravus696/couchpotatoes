@@ -21,7 +21,13 @@ router.post('/upload', (req, res) => __awaiter(void 0, void 0, void 0, function*
         method: 'POST',
         redirect: 'follow',
         headers: myHeaders,
-        body: JSON.stringify({ url: imageUrl, delay })
+        body: JSON.stringify({ 
+            url: imageUrl,
+            delay: 1, // Required parameter
+            resize: { width: 500, height: 500 }, // Example resize parameter
+            option: "compress", // Example option parameter
+            quality: 85 // Example quality parameter
+         })
     };
     try {
         // Make the API request
