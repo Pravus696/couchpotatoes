@@ -1,3 +1,5 @@
+import Post from "../models/post.js";
+
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Couch, User, Post } from '../models/index.js';
+
 // Get all posts
-export const getAllPosts = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
+export const getAllPosts = (_req, res) => __awaiter(void 0, void 0, void 0, async function* () {
     try {
         const posts = yield Post.find()
             .populate("couch", "name type") // Populate related couch fields
@@ -19,6 +21,23 @@ export const getAllPosts = (_req, res) => __awaiter(void 0, void 0, void 0, func
     }
     catch (error) {
         res.status(500).json({ error: "Failed to fetch posts", details: error });
+    }
+    console.log('Fetched Posts:', Post);
+    console.error('Error fetching posts:', err);
+
+    console.log('Request received at /api/posts/recent');
+    try {
+        console.log('Database collections:', await mongoose.connection.db.listCollections().toArray());
+
+        const posts = await Post.find({});
+        console.log('Fetched Posts:', posts);
+        res.json(posts);
+    } catch (err) {
+        console.error('Error fetching posts:', err);
+        res.status(500).json({ 
+            error: 'Failed to fetch posts', 
+            details: err.message 
+        });
     }
 });
 // Create a new post

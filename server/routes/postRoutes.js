@@ -1,8 +1,8 @@
 import express from 'express';
-import { getAllPosts, createPost, addComment, likePost, deletePost, } from '../controllers/postController';
+import { getAllPosts, createPost, addComment, likePost, deletePost, } from '../controllers/postController.js';
 const router = express.Router();
 // Route to get all posts
-router.get('/', getAllPosts);
+router.get('/recent', getAllPosts);
 // Route to create a new post
 router.post('/', createPost);
 // Route to add a comment to a post
