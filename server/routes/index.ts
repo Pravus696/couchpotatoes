@@ -12,7 +12,7 @@ import apiRoutes from './api/imageUploadAPI';
 
 router.use('/api', apiRoutes);
 
-router.use((req: Request, res: Response ) => {
+router.use((_req: Request, res: Response ) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
