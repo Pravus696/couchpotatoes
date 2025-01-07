@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'node:path';
-import { fileURLToPath } from 'url';
 import routes from './routes/index.js';
 import db from './config/connection.js';
 import dotenv from 'dotenv';
