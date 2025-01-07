@@ -46,21 +46,27 @@ const Home = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     console.log({ cardTitle, cardDescription, cardImage });
-
+  
+    // Create FormData object before using it
+    const formData = new FormData();
+    formData.append("url", cardImage); // Ensure 'cardImage' is properly set
+    formData.append("delay", 1);
+    formData.append("option", "compress");
+    formData.append("quality", 80);
+  
     try {
-    const response = await axios.post("http://localhost:3001/api/upload", formData, {
-      title: cardTitle,
-      description: cardDescription,
-      imageUrl: cardImage,
-      headers: {
-        "Content-Type": "application/json",
-      },
-
-    });
+      // Axios POST request
+      const response = await axios.post("/api/upload", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+  
       console.log("Post created:", response.data);
-
+  
+      // Update state
       setPosts([...posts, response.data]);
       setCardTitle("");
       setCardDescription("");
@@ -68,7 +74,7 @@ const Home = () => {
     } catch (error) {
       console.error("Error creating post:", error);
     }
-  }
+  };
 
   return (
     <div className="home-container">
