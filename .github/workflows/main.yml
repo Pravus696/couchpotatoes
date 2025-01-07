@@ -11,16 +11,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Install dependencies
         run: |
-            cd client/src
-            npm install
-            cd ..
-            npm install
-            cd ../server/src
-            npm install
-    
+          cd client/src
+          npm install
+          cd ..
+          npm install
+          cd ../server/src
+          npm install
+
+      - name: Build Client
+        run: |
+          cd client
+          npm run build
+
+      - name: Build Server
+        run: |
+          cd server
+          npm run build
+
+      - name: Deploy to Render
+        uses: render-app/deploy@v1
+        with:
+          api_token: ${{ Y2IYAk5ixUU }} # Replace with your Render API Token
+          project_name: couchpotatoes # Replace with your Render project name
+          service_type: web # Or 'web' or 'worker' depending on your service type
+          build_command: npm run render-build # Command to build your project
+          start_command: npm start # Command to start your server
