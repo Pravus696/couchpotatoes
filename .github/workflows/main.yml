@@ -39,7 +39,7 @@ jobs:
       - name: Deploy to Render
         uses: render-app/deploy@v1
         with:
-          api_token: ${{ Y2IYAk5ixUU }} # Replace with your Render API Token
+          api_token: ${{ secrets.RENDER_API_TOKEN }} # Replace with your Render API Token
           project_name: couchpotatoes # Replace with your Render project name
           service_type: web # Or 'web' or 'worker' depending on your service type
           build_command: npm run render-build # Command to build your project
