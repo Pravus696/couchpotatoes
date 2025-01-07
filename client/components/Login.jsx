@@ -10,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
-        event.preventDefault();
+        e.preventDefault();
 
         try {
             const response = await axios.post('/api/auth/login', {
@@ -37,6 +37,9 @@ const Login = () => {
             } else {
                 setError('Invalid credentials');
             }
+        } catch (error) {
+            console.error('Login error:', error);
+            setError('An error occurred during login. Please try again.');
         }
     };
 
