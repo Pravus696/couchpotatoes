@@ -20,7 +20,7 @@ CouchPotatoes is a social network platform for couch enthusiasts. Users can shar
 - [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
 - [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
+- [Links](#links)
 - [License](#license)
 
 ## Features
