@@ -2,8 +2,10 @@
   "scripts": {
     "client": "npm start --prefix client",
     "server": "npm start --prefix server",
+    "install": "cd client && npm install && cd .. && cd server && npm install",
+    "render-start": "cd server && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
+    "build": "cd client && npm run build",
     "render-build": "npm install && npm run build"
   },
   "dependencies": {
@@ -12,8 +14,5 @@
     "dotenv": "^16.4.7",
     "mongoose": "^8.9.3",
     "vite": "^6.0.7"
-  },
-  "devDependencies": {
-    "webpack-cli": "^6.0.1"
   }
 }

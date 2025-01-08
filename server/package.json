@@ -5,20 +5,13 @@
     "type": "module",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js",
-        "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
-        "build": "webpack --mode production",
-        "render-build": "npm install && npm run build"
+        "start": "node server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "devDependencies": {
-        "concurrently": "^8.2.0",
-        "webpack": "^5.88.2",
-        "webpack-cli": "^5.1.4"
-    },
     "dependencies": {
+        "couchpotatoes": "file:",
         "express": "^4.21.2",
         "mongoose": "^8.9.3",
         "node-fetch": "^3.3.2"
