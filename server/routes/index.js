@@ -5,10 +5,8 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // Import the updated image upload API route
-import apiRoutes from './api/imageUploadAPI.js';
-import postRoutes from './postRoutes.js';
-router.use('/posts', postRoutes); // Maps "/api/posts"
-router.use('/api', apiRoutes);
+import imageUploadAPI from './api/imageUploadAPI.js';
+router.use('/api', imageUploadAPI);
 router.use((_req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
